@@ -1,0 +1,13 @@
+# Secrets and API Keys
+.env
+
+# Python Virtual Environment
+venv/
+ENV/
+
+# Python Cache (removes those annoying __pycache__ folders)
+__pycache__/
+*.py[cod]
+
+# OS specific files
+.DS_Store
