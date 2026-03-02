@@ -9,7 +9,7 @@ load_dotenv()
 # The 'Judge' or 'Red-Teamer'
 critic = Agent(
     'google-gla:gemini-2.5-flash',
-    result_type=bool, # The Critic just gives a Thumb Up (True) or Thumb Down (False)
+    output_type=bool, # The Critic just gives a Thumb Up (True) or Thumb Down (False)
     system_prompt="""
     You are a Senior Logic Auditor. Your job is to review an Agent's reasoning.
     Look for:
@@ -30,9 +30,9 @@ def audit_agent_response(agent_output: VerifiedResponse):
     
     result = critic.run_sync(audit_input)
     
-    if result.data is True:
+    if result.output is True:
         print("✅ LOGIC VERIFIED: The Critic found no flaws.")
     else:
         print("❌ LOGIC REJECTED: The Critic found a logical fallacy!")
     
-    return result.data
+    return result.output
