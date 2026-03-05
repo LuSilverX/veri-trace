@@ -47,5 +47,5 @@ def run_veritrace_loop(user_question: str, max_retries: int = 3):
 
 if __name__ == "__main__":
     # The "Towel Problem" is the classic test for logic vs. pattern matching
-    question = "If it takes 3 towels 3 hours to dry in the sun, how long does it take 6 towels?"
+    question = "A bat and a ball cost 1.10 in total. The bat costs 1.00 more than the ball. How much does the ball cost?"
     run_veritrace_loop(question)

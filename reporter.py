@@ -29,10 +29,15 @@ def generate_markdown_report():
         report_md += "---\n"
 
     # 3. Save as a Markdown file
-    with open("LATEST_TRACE.md", "w") as f:
+    report_filename = f"reports/report_{int(os.path.getctime(latest_file))}.md"
+    with open(report_filename, "w") as f:
+        f.write(report_md)
+    
+    with open("reports/LATEST_TRACE.md", "w") as f:
         f.write(report_md)
     
     print(f"📄 [REPORTER]: Markdown report generated: LATEST_TRACE.md")
+    print(f"📄 [REPORTER]: Report saved to {report_filename}")
 
 if __name__ == "__main__":
     generate_markdown_report()
