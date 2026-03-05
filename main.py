@@ -1,8 +1,9 @@
 import os
 from dotenv import load_dotenv
-from agent import agent, VerifiedResponse
+from agent import agent
 from critic import audit_agent_response
 from auditor import TrajectoryAuditor
+from reporter import generate_markdown_report
 
 load_dotenv()
 
@@ -33,12 +34,14 @@ def run_veritrace_loop(user_question: str, max_retries: int = 3):
             print("\n🏁 FINAL VERIFIED RESULT:")
             print(result.output.answer)
             auditor.save_report()
+            generate_markdown_report()
             return result.output
         else:
             feedback = "The logic was flagged as flawed. Please re-evaluate the constraints of the problem."
             current_attempt += 1
 
     auditor.save_report()
+    generate_markdown_report()
     print("\n🛑 TRACE FAILED: Could not verify logic within retry limit.")
     return None
 
