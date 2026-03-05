@@ -3,6 +3,7 @@ import os
 import glob
 
 def generate_markdown_report():
+    os.makedirs('reports', exist_ok=True)
     # 1. Find the newest log file in the /logs folder
     list_of_files = glob.glob('logs/*.json')
     if not list_of_files:
