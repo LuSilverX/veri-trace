@@ -1,7 +1,7 @@
 # 🛡️ VeriTrace
 **High-Precision Agentic Logic with Trajectory Auditing**
 
-VeriTrace is an AI orchestration pipeline designed to eliminate logical "hallucinations" through real-time auditing. By implementing an **Agent-Critic-Auditor** loop, the system verifies reasoning trajectories before finalizing a response, ensuring mathematical and logical rigor.
+VeriTrace is an AI orchestration pipeline designed to eliminate logical 'hallucinations' across complex reasoning and engineering tasks through real-time auditing. By implementing an **Agent-Critic-Auditor** loop, the system verifies reasoning trajectories before finalizing a response, ensuring mathematical and logical rigor.
 
 
 
@@ -14,7 +14,9 @@ VeriTrace moves beyond simple prompting by using a multi-stage validation loop:
 4. **The Reporter:** An automated post-processor that transforms raw technical logs into human-readable Markdown audits.
 
 ## 🔍 Execution Flow
-When the system encounters a "Heuristic Trap," you can see the Critic intervene in real-time.
+When the system encounters a "Heuristic Trap," you can see the Critic intervene in real-time. 
+
+While demonstrated here via a heuristic riddle, the VeriTrace architecture is a general-purpose evaluator capable of auditing code refactors, logistical constraints, and structured data extraction.
 
 **Terminal View:**
 ![Terminal Trace Demo](./demo/terminal_output.png)
